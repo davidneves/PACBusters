@@ -23,7 +23,7 @@ public class GameObjectsFactory {
 
         switch (type) {
             case GHOST:
-                gameObject = new Ghost ((MovableRepresentation) representableFactory.createRepresentation(type));
+                gameObject = new Ghost((MovableRepresentation) representableFactory.createRepresentation(type));
                 break;
             case PLAYER:
                 gameObject = new Player((MovableRepresentation) representableFactory.createRepresentation(type));
