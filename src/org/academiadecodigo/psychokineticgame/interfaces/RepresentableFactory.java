@@ -9,4 +9,6 @@ public interface RepresentableFactory {
 
     Representable createRepresentation(GameObjectType type);
 
+    // TODO: 08/06/16 Falta adicionar as classes que implementam a representação dos objectos usando o JavaFX
+    
 }

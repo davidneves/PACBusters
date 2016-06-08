@@ -1,6 +1,7 @@
 package org.academiadecodigo.psychokineticgame.gameobjects;
 
 import org.academiadecodigo.psychokineticgame.interfaces.MovableRepresentation;
+import org.academiadecodigo.psychokineticgame.interfaces.Representable;
 import org.academiadecodigo.psychokineticgame.interfaces.RepresentableFactory;
 
 /**
@@ -18,9 +19,19 @@ public class GameObjectsFactory {
 
     public GameObject createObject(GameObjectType type) {
 
-        GameObject gameObject = null;
+        GameObject gameObject;
 
-        gameObject = new Player((MovableRepresentation) representableFactory.createRepresentation(type));
+        switch (type) {
+            case GHOST:
+                gameObject = new Ghost ((MovableRepresentation) representableFactory.createRepresentation(type));
+                break;
+            case PLAYER:
+                gameObject = new Player((MovableRepresentation) representableFactory.createRepresentation(type));
+                break;
+            case BATTERY:
+                gameObject = new Battery(representableFactory.createRepresentation(type));
+                break;
+        }
 
         return gameObject;
     }
